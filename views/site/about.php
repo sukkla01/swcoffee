@@ -1,4 +1,5 @@
 <?php
+
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
@@ -6,11 +7,12 @@ $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1>พัฒนาโดย</h1>
+    <h4>
+        <p>
+            นายสุจินต์ สุกกล้า ตำแหน่ง นักวิชาการคอมพิวเตอร์<br>
+            พนักงานกระทรวงสาธารณสุข
+        </p>
+    </h3>
 
-    <p>
-        This is the About page. You may modify the following file to customize its content:
-    </p>
-
-    <code><?= __FILE__ ?></code>
 </div>

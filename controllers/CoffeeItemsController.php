@@ -3,16 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\Contact;
-use app\models\ContactSearch;
+use app\models\CoffeeItems;
+use app\models\CoffeeItemsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use app\models\User;
+
 /**
- * ContactController implements the CRUD actions for Contact model.
+ * CoffeeItemsController implements the CRUD actions for CoffeeItems model.
  */
-class ContactController extends Controller
+class CoffeeItemsController extends Controller
 {
     public function behaviors()
     {
@@ -23,43 +23,17 @@ class ContactController extends Controller
                     'delete' => ['post'],
                 ],
             ],
-            /*'access'=>[
-                'class'=>  \yii\filters\AccessControl::className(),
-                'ruleConfig'=>[
-                    'class'=>  \app\components\AccessRule::className(),
-                ],
-                'only'=>['create','update','delete'],
-                'rules'=>[
-                    [
-                        'actions'=>['create','update'],
-                        'allow'=>true,
-                        'roles'=>[
-                            User::ROLE_MANAGER,
-                            User::ROLE_ADMIN,
-                        ]
-                    ],
-                    [
-                        'actions'=>['delete'],
-                        'allow'=>true,
-                        'roles'=>[
-                            User::ROLE_ADMIN,
-                        ]
-                    ]
-                ]
-            ],*/
-            
         ];
     }
 
     /**
-     * Lists all Contact models.
+     * Lists all CoffeeItems models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new ContactSearch();
+        $searchModel = new CoffeeItemsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        //$dataProvider->pagination->pageSize = 2;
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -68,7 +42,7 @@ class ContactController extends Controller
     }
 
     /**
-     * Displays a single Contact model.
+     * Displays a single CoffeeItems model.
      * @param integer $id
      * @return mixed
      */
@@ -80,13 +54,13 @@ class ContactController extends Controller
     }
 
     /**
-     * Creates a new Contact model.
+     * Creates a new CoffeeItems model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Contact();
+        $model = new CoffeeItems();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -98,7 +72,7 @@ class ContactController extends Controller
     }
 
     /**
-     * Updates an existing Contact model.
+     * Updates an existing CoffeeItems model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -117,7 +91,7 @@ class ContactController extends Controller
     }
 
     /**
-     * Deletes an existing Contact model.
+     * Deletes an existing CoffeeItems model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -130,15 +104,15 @@ class ContactController extends Controller
     }
 
     /**
-     * Finds the Contact model based on its primary key value.
+     * Finds the CoffeeItems model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Contact the loaded model
+     * @return CoffeeItems the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Contact::findOne($id)) !== null) {
+        if (($model = CoffeeItems::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

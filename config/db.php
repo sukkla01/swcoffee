@@ -6,4 +6,7 @@ return [
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8',
+     'attributes'=>array(
+    PDO::MYSQL_ATTR_LOCAL_INFILE=>TRUE
+  ),
 ];

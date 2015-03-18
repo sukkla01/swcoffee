@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'tambon.province.province_name',
             'email:email',
 
-            ['class' => 'yii\grid\ActionColumn'],
+           ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 
