@@ -43,6 +43,7 @@ echo ListView::widget([
 echo ListView::widget([
                     'dataProvider' => $dataProvider,
                     'itemView' => '_contact',
+                    //'Options'=>['class'=>'text-right']
                 ]);
                 ?>
             </div>

@@ -52,7 +52,7 @@ material\MaterialAsset::register($this);
                     ],
                     
                     ['label' => 'อัพโหลดข้อมูล', 'url' => ['/upload/upload']],
-                    ['label' => 'ตั่งค่า', 'url' => ['/upload/upload']],
+                    ['label' => 'ตั่งค่า', 'url' => ['/setting']],
                     ['label' => 'เกี่ยวกับเรา', 'url' => ['/site/about']],
                    //['label' => 'ติดต่อ', 'url' => ['/site/contact']],
                    // ['label' => 'User', 'url' => ['/user']],
