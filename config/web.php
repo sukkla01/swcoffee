@@ -57,13 +57,14 @@ $config = [
             'site/*',
             'user/*',
             'gii/*',
-            'report/*',
+            //'report/*',
             'gridview/*',
             'contact/*',
             'base/*',
             'map/*',
-            'debug/*',
-            'upload/*'
+            //'debug/*',
+            //'upload/*',
+            'widgets/*'
         ]
     ],
     'modules' => [

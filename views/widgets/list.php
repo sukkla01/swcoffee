@@ -1,6 +1,9 @@
 
 <?php
 use yii\widgets\ListView;
+
+$this->title = 'รายการสินค้า';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 
 

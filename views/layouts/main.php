@@ -42,17 +42,18 @@ material\MaterialAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                
                 'items' => [
-                    ['label' => 'หน้าหลัก', 'url' => ['/site/index']],
+                    ['label' => 'หน้าหลัก', 'url' => ['/widgets/list']],
                     ['label' => 'รายงาน',
                         'items' => [
-                            ['label' => 'รายงาน1', 'url' => ['/report/report/report1']],
-                            ['label' => 'รายงาน2', 'url' => ['/report/report/report2']],
-                            ['label' => 'รายงาน3', 'url' => ['/report/report/report3']],
+                            ['label' => 'รายงานประจำวัน', 'url' => ['/query/query4']],
+                            ['label' => 'รายงานประจำเดือน', 'url' => ['/report/report/report2']],
+                            ['label' => 'รายงานประจำปี', 'url' => ['/report/report/report3']],
                         ]
                     ],
+                    ['label' => 'อัพโหลดข้อมูล', 'url' => ['/upload/upload']],
                     ['label' => 'เกี่ยวกับเรา', 'url' => ['/site/about']],
-                    ['label' => 'ติดต่อ', 'url' => ['/site/contact']],
-                    ['label' => 'User', 'url' => ['/user']],
+                   //['label' => 'ติดต่อ', 'url' => ['/site/contact']],
+                   // ['label' => 'User', 'url' => ['/user']],
                     Yii::$app->user->isGuest ?
                             ['label' => 'เข้าสู่ระบบ', 'url' => ['/user/login']] :
                             ['label' => 'ออกจากระบบ (' . Yii::$app->user->displayName . ')',
@@ -83,7 +84,7 @@ material\MaterialAsset::register($this);
 
         <footer class="footer">
             <div class="container">
-                <p class="pull-left">&copy; MOPH <?= date('Y') ?></p>
+                <p class="pull-left">&copy; SRISANGWORN <?= date('Y') ?></p>
                 <p class="pull-right"><?= Yii::powered() ?></p>
             </div>
         </footer>

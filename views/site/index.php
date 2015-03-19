@@ -8,12 +8,12 @@ use yii\helpers\Html;
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>MOPH Report</h1>
+        <h1>SW COFFEE</h1>
 
-        <p class="lead">ระบบรายงาน</p>
+        <p class="lead">ระบบจัดการร้านกาแฟของโรงพยาบาลศรีสังวรสุโขทัย</p>
 
         <p>
-        <?= Html::a('ดูรายงาน', ['/report'], ['class'=>'btn btn-lg btn-success']);?>
+        <?= Html::a('หน้าหลัก', ['/widgets/list'], ['class'=>'btn btn-lg btn-success']);?>
         </p>
     </div>
 
