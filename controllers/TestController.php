@@ -1,6 +1,6 @@
 <?php
 
-namespace app\controllers;
+/*namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
@@ -94,3 +94,4 @@ class SiteController extends Controller
         return $this->render('test');
     }
 }
+*/
