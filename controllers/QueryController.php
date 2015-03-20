@@ -94,7 +94,7 @@ class QueryController extends Controller{
         $sql="SELECT YEAR(d_update) AS tyear,MONTH(d_update) AS tmonth,DAY(d_update) AS tday,SUM(qty) AS tsum,
 CONCAT(YEAR(d_update),MONTH(d_update)) AS  groupmonth
 FROM coffee_head 
-WHERE YEAR(d_update)='2015' AND MONTH(d_update)='3'
+WHERE YEAR(d_update)='2015' 
 GROUP BY groupmonth
 ORDER BY tmonth";
         $data = $connection->createCommand($sql)
@@ -122,7 +122,7 @@ ORDER BY tmonth";
         $sql="SELECT YEAR(d_update) AS tyear,MONTH(d_update) AS tmonth,DAY(d_update) AS tday,SUM(qty) AS tsum,
 YEAR(d_update)  groupyear
 FROM coffee_head 
-WHERE YEAR(d_update)='2015' AND MONTH(d_update)='3'
+#WHERE YEAR(d_update)='2015' AND MONTH(d_update)='3'
 GROUP BY groupyear
 ORDER BY groupyear";
         $data = $connection->createCommand($sql)

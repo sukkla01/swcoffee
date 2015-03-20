@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?php
             echo Highcharts::widget([
                 'options' => [
-                    'title' => ['text' => 'จำนวนการขายกาแฟต่อวัน'],
+                    'title' => ['text' => 'จำนวนการขายกาแฟต่อเดือน'],
                     'xAxis' => [
                         'categories' => $tmonth
                     ],
