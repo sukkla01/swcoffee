@@ -46,8 +46,8 @@ material\MaterialAsset::register($this);
                     ['label' => 'รายงาน',
                         'items' => [
                             ['label' => 'รายงานประจำวัน', 'url' => ['/query/query4']],
-                            ['label' => 'รายงานประจำเดือน', 'url' => ['/report/report/report2']],
-                            ['label' => 'รายงานประจำปี', 'url' => ['/report/report/report3']],
+                            ['label' => 'รายงานประจำเดือน', 'url' => ['/query/query5']],
+                            ['label' => 'รายงานประจำปี', 'url' => ['/query/query6']],
                         ]
                     ],
                     
