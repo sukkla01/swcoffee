@@ -29,9 +29,9 @@ class WidgetsController extends Controller{
        
         $dataProvider1 = new ActiveDataProvider([
             'query'=>  CoffeeItems::find()
-                     ->where('order_guide<>'".Y."'"),
+                     ->where("order_guide<>'n'"),
             'pagination'=>[
-                'pageSize'=>8
+                'pageSize'=>4
             ]
         ]);
        

@@ -5,7 +5,7 @@ use yii\widgets\ListView;
 
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 centered">
         <div class="panel panel-warning">
             <div class="panel-heading">
                 <h3 class="panel-title">สินค้าแนะนำ</h3>
@@ -17,7 +17,7 @@ use yii\widgets\ListView;
 
 echo ListView::widget([
                     'dataProvider' => $dataProvider1,
-                    'itemView' => '_contact',
+                    'itemView' => '_coffee',
                 ]);
                 ?>
             </div>

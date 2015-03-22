@@ -22,7 +22,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'order_guide')->dropDownList([ '1' => 'N', '2' => 'Y', ], ['prompt' => '']) ?>
+    <?= $form->field($model, 'order_guide')->dropDownList([ 'N' => 'N', 'Y' => 'Y', ], ['prompt' => '']) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
