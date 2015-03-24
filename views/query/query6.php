@@ -4,7 +4,7 @@ use yii\grid\GridView;
 use miloschuman\highcharts\Highcharts;
 use yii\helpers\Html;
 
-$this->title = 'รายงานประจำวัน';
+$this->title = 'รายงานประจำปี';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?php
             echo Highcharts::widget([
                 'options' => [
-                    'title' => ['text' => 'จำนวนการขายกาแฟต่อวปี'],
+                    'title' => ['text' => 'จำนวนการขายกาแฟต่อปี'],
                     'xAxis' => [
                         'categories' => $tyear
                     ],
