@@ -9,6 +9,14 @@ use Yii;
 class UploadController extends Controller{
     public function actionUpload(){
         $model = new UploadForm;
+        
+         
+        $date1 = date('Y-m-d');
+        if (Yii::$app->request->isPost) {
+            $date1 = $_POST['date1'];
+        }
+        
+        
         $connection = Yii::$app->db;
         if(Yii::$app->request->isPost){
             $model->file = UploadedFile::getInstance($model, 'file');
@@ -16,7 +24,7 @@ class UploadController extends Controller{
                 $model->file->saveAs(
                 'uploads/coffee/'.$model->file->baseName.'_'.date("Ymd").'.'.$model->file->extension);
               
-               $data = $connection->createCommand("DELETE FROM coffee_head WHERE concat(YEAR(d_update),MONTH(d_update),DAY(d_update))=concat(YEAR(CURDATE()),MONTH(CURDATE()),DAY(CURDATE())) ")->execute();
+               $data = $connection->createCommand("DELETE FROM coffee_head WHERE d_update='".$date1."'")->execute();
               $path= $model->file->baseName.'_'.date("Ymd").'.'.$model->file->extension;
               
               $sql="LOAD DATA LOCAL INFILE 'uploads/coffee/$path' REPLACE INTO TABLE coffee_head
@@ -27,7 +35,7 @@ class UploadController extends Controller{
               
               $data = $connection->createCommand($sql)->execute();
               $data = $connection->createCommand("DELETE FROM coffee_head WHERE name LIKE 'PLU%' ")->execute();
-              $data = $connection->createCommand("UPDATE coffee_head SET d_update=NOW() WHERE d_update='' ")->execute();
+              $data = $connection->createCommand("UPDATE coffee_head SET d_update='".$date1."' WHERE d_update='' ")->execute();
                 
                 Yii::$app->session->setFlash('success', '!! อัพโหลดไฟล์เรียบร้อยแล้ว');
             }else{
@@ -40,10 +48,10 @@ class UploadController extends Controller{
         Yii::$app->session->setFlash('danger', 'อันตราย');
         Yii::$app->session->setFlash('default', 'ปกติ');*/
     
-        $data = $connection->createCommand('SELECT ch.code ,ci.name,ch.qty,ch.amount,ch.dept,ch.d_update
+        $data = $connection->createCommand("SELECT ch.code ,ci.name,ch.qty,ch.amount,ch.dept,ch.d_update
                         FROM coffee_head ch
                         INNER JOIN coffee_items ci ON ci.code=ch.code
-                        WHERE concat(YEAR(d_update),MONTH(d_update),DAY(d_update))=concat(YEAR(CURDATE()),MONTH(CURDATE()),DAY(CURDATE())) ')
+                        WHERE d_update='".$date1."' ")
                 ->queryAll();
         $dataProvider = new ArrayDataProvider([
             'allModels'=>$data,
@@ -53,6 +61,6 @@ class UploadController extends Controller{
         ]);
        
         return $this->render('upload',
-                ['dataProvider'=>$dataProvider,'model'=>$model]);
+                ['dataProvider'=>$dataProvider,'model'=>$model,'date1'=>$date1]);
     }
 }

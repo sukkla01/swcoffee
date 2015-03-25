@@ -3,6 +3,7 @@
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use kartik\grid\GridView;
+echo $date1;
 ?>
 
 
@@ -14,27 +15,49 @@ use kartik\grid\GridView;
                 <h3 class="panel-title">จัดเก็บข้อมูล</h3>
             </div>
             <div class="panel-body">
-                <?php
-                $form = ActiveForm::begin([
-                            'options' => [
-                                'enctype' => 'multipart/form-data'
-                            ]
-                        ])
-                ?>
-                <?= $form->field($model, 'file')->fileInput(); ?>
-<?= Html::submitButton('ส่งข้อมูล', ['class' => 'btn btn-success']);
-?>
-<?php ActiveForm::end(); ?>
-
+                <div class="col-md-6">
+                    <?php
+                    $form = ActiveForm::begin([
+                                'options' => [
+                                    'enctype' => 'multipart/form-data'
+                                ]
+                            ])
+                    ?>
+                    <?= $form->field($model, 'file')->fileInput(); ?>
+                </div> 
+                <div class="col-md-6">
+                    เลือกวันที่ :
+                    <?php
+                    
+                    echo yii\jui\DatePicker::widget([
+                        'name' => 'date1',
+                        'value' => $date1,
+                        'language' => 'th',
+                        'dateFormat' => 'yyyy-MM-dd',
+                        'clientOptions' => [
+                            'changeMonth' => true,
+                            'changeYear' => true,
+                        ],
+                    ]);
+                    ?>
+                </div>
+                
             </div>
+
+            &nbsp;&nbsp;&nbsp;<?= Html::submitButton('ส่งข้อมูล', ['class' => 'btn btn-success']); ?>
+            <?php ActiveForm::end(); ?>
+            
         </div>
+        
     </div>
-    
+
+
+
     <div class="col-md-12">
         <?php
         $this->title = 'อัพโหลดไฟล์';
         $this->params['breadcrumbs'][] = $this->title;
-        $cdate=date("Y-m-d");
+        $cdate = date("Y-m-d");
         echo GridView::widget([
             'dataProvider' => $dataProvider,
             'panel' => [
@@ -55,7 +78,7 @@ use kartik\grid\GridView;
             'showPageSummary' => true,
             'columns' => [
                 //['class'=>'yii\grid\SerialColumn'],
-               
+
                 [
                     'label' => 'รหัส',
                     'attribute' => 'code'
@@ -80,8 +103,6 @@ use kartik\grid\GridView;
                     'label' => 'วันที่',
                     'attribute' => 'd_update'
                 ],
-                
-                
             ]
         ]);
         ?>
