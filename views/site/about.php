@@ -22,7 +22,14 @@ $this->params['breadcrumbs'][] = $this->title;
             พนักงานกระทรวงสาธารณสุข<br>
             Facebook : <a href="https://www.facebook.com/jub.wifi" >JubWiFi</a> <br>
             Line : <a href="#" >jubwifi</a> <br>
-    -----------------------------------------------        
+    -----------------------------------------------      
+    
+     <h1>คู่มือ</h1>
+   
+     
+        <a href="../web/uploads/flowchart.png" >Flowchart</a> <br>
+           
+    -----------------------------------------------    
        
     
 
