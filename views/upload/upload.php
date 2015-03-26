@@ -3,7 +3,7 @@
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use kartik\grid\GridView;
-echo $date1;
+//echo $date1;
 ?>
 
 
@@ -45,6 +45,10 @@ echo $date1;
             </div>
 
             &nbsp;&nbsp;&nbsp;<?= Html::submitButton('ส่งข้อมูล', ['class' => 'btn btn-success']); ?>
+            
+            <a class="btn btn-warning btn-xlarge" id="btn_1" href="http://203.157.82.68:8080/stimulja/?report=swcoffee_totalday.mrt&start=<?=$date1;?>" target="_blank"> 
+                        <i class="glyphicon glyphicon-print"></i> พิมพ์  
+            </a>
             <?php ActiveForm::end(); ?>
             
         </div>
